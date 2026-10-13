@@ -25,14 +25,14 @@ in computing - governments, corporations, hyperscalers, among others
 - their operational or licensing needs are not the priority of this
 project.
 
-# The Contribution Process
+# Contributions
 
-While this project welcomes contributions and new contributors, I
-insist that any contributions larger than a few lines - in particular
-any new features or significant rearchitecting or reorganization
-of the codebase - *must* begin with a discussion in the issue tracker
-that establishes goals, scope, constraints and testing required for
-that change to be accepted.
+While this project welcomes contributions and new contributors, any 
+contributions larger than a few lines - in particular any new features
+or significant re-architecting or reorganization of the codebase -
+*must* begin with a discussion in the issue tracker that establishes 
+the goals, scope, constraints and testing required for that change 
+to be accepted.
 
 The software _per se_ is not the goal. Code is the implementation
 language of a shared understanding, and that shared understanding
@@ -47,9 +47,9 @@ Because creating code is so much easier than understanding, debugging
 and maintaining that code, particularly over the long term, large
 contributions offered before we've come to some reasonable consensus
 about structure, success conditions and acceptance criteria are not
-welcome. Because the priority of this project is a shared human
-understanding, 'agentic', LLM or sochastially-generated contributions
-will be unilaterally r rejected.
+welcome. Because the priority of this project is the shared human 
+understanding of human-scale systems, 'agentic', large-model or otherwise 
+sochastically-generated contributions will be unilaterally rejected.
 
 # Maintenance And Support Terms
 
@@ -66,7 +66,7 @@ use of the software for any reason, particularly with respect to:
 - Any other non-contractual obligations or conventions, regardless of
   their presumed urgency or severity.
 
-I hope you find this valuable on those terms.
+I hope you find this repository valuable on those terms.
 
 # Notes
 
