@@ -13,11 +13,13 @@ and other executable-adjacent resources to create a unified software
 package that is trivial to deploy, explore and audit. 
 
 As well - by taking advantage of the capabilities of SQLite - this
-project has two other goals. First, approach lets us replace a set
-brittle, high-complexity tools with much simpler and more easily
-legible programs and processes. Second - and more importantly -
-this approach will let creative developers easily include other
-useful tools or expressive works with the software they ship.
+project has two other goals. First, this approach lets us replace a 
+set of difficult-to-understand, high-complexity tools with much simpler 
+and more easily legible and auditable programs and processes. 
+
+Second - and more importantly - this approach will let creative
+developers easily include other useful tools or expressive works 
+with the software they ship.
 
 # The longer story.
 
@@ -53,7 +55,9 @@ database get us?
 
 I think we can start answering that question by asking, what else 
 do we have lying around next to our executables that's also almost 
-a database? And I believe the answer is: a lot.
+a database?
+
+The answer is: a lot.
 
 If your data format is both an executable and a database, installers
 barely exist; they're reduced to a download and a symlink. Entire 
