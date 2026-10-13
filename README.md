@@ -33,47 +33,57 @@ Rule](https://en.wikipedia.org/wiki/Greenspun's_tenth_rule), that
 hoc, informally-specified, bug-ridden, slow implementation of half
 of Common Lisp" - when Zakaria introduced his work.
 
-And the two questions that I think emerge from that are, first, in
-terms of the platonic ideal shapes and structures of computer science
-the state machines, functional approaches, databases, and so on:
-should Carmack's idea that if you're almost there consider going
-all the way be elevated to a general principle? 
+In terms of the platonic ideal shapes and structures of computer science
+the state machines, functional approaches, databases, and so on, these
+two ideas resonate.
 
-If something is most of the way to [being a thing] then should we
-try to get it all the way to [being that thing] so that we can
-leverage of all the research theory and benefits of [being that
-thing]?
+Should Carmack's idea that if you're almost there consider going
+all the way be elevated to a general principle? If something is most
+of the way to Being A Thing, then should we as a matter of good
+practice try to get it all the way to Being That Thing so that
+we can leverage of all the research theory and benefits of That Thing?
 
-And second: what if every sufficently complex data format is
-effectively an informally specified, bug-ridden, slow implementation
-of half of a database?
+And what if every sufficently complex data format is effectively 
+an informally specified, bug-ridden, slow implementation of half of
+a database? 
 
 If that's the case, if an executable is already most of the way to
 being a database, what does getting it all the way to being a
-database get us? I think we can start answering that question by
-asking, what else do we have lying around next to our executables,
-that are also almost a database?
+database get us? 
 
-I believe the answer to both of those question is: a lot.
+I think we can start answering that question by asking, what else 
+do we have lying around next to our executables that's also almost 
+a database? And I believe the answer is: a lot.
 
 If your data format is both an executable and a database, installers
-barely exist; they're reduced to a download and a symlink. Strip(),
-like many of the tools we use to interrogate binaries, stop being
-fiddly multi-thousand-line exercises in bitbanging and turn into
-declarative, structured queries that are just a few easily understood
-lines long.  We can flatten the MxN arch/distro problem with per-arch
-binaries and per-distro packaging manifests built in, after
-compilation, the build step becomes a trivial transaction.
+barely exist; they're reduced to a download and a symlink. Entire 
+toolchains become a small set of legible transactions. Strip(), like 
+so many of the tools we use to inspect or modify binaries, stops 
+is reduced from a multi-thousand-line exercise in processing hexadecimal
+and turns into a single easily understood transaction. We can flatten 
+the MxN arch/distro problem with per-arch binaries and per-distro packaging manifests built in, after compilation, the build step becomes transaction
+that's not just easy to read and understand but trivial to audit. 
 
-And you can put anything else you want in there with it. Sample
-code, a whole VCS can come built-in. Community contributions,
+```console
+$ file hello
+hello: SQLite 3.x database, application id 0x53454c46, user version 1
+$ ./hello
+Hello, world!
+$ sqlite3 hello 'SELECT soname FROM ldd'          # ldd, as a query
+$ sqlite3 hello 'DELETE FROM sections; VACUUM'    # strip, as a transaction
+$ ./hello                                         # still runs
+Hello, world!
+```
+And data's just data; you can put anything else you want in there with it. 
+
+Sample code, a whole VCS can come built-in. Community contributions,
 alternative skins or themes... I mean, why not ship your art-project
-software with the art - the fanfiction, music and art all baked
-into a single container that happes to be the thing you run?
+software with the inspiring art, all baked into a single container 
+that happens to be the thing you run?
 
-And I don't think that this comes at the cost of... much of anything,
-and might even be a performance win overall. There's a very modest
-startup cost to thos approach, a reasonable tradeoff, but SQLite
+While the analysis is pending, I don't think that this comes at the cost 
+of ... much of anything. It might even be a performance win overall. 
+There's a very modest startup cost to this approach, true, but SQLite
 is wildly more reliable than reading or writing text-based data
 formats off the metal and - somehow, incredibly - in many cases
 [SQLite is 35% faster than
@@ -82,7 +92,7 @@ fopen()](https://www3.sqlite.org/matrix/fasterthanfs.html)!
 Dr. Hipp has famously said that SQLite3 isn't competing with MySQL
 or Postgres; it's competing with fopen().
 
-So what happens, what do we get, if we... let SQLite win?
+So what happens if we ... let SQLite win?
 
 # Background 
 
@@ -97,17 +107,6 @@ of a nixpkgs/NixOS slice.
 
 This project has changed foundations from the nix/guix environment
 to Debian Trixie.
-
-```console
-$ file hello
-hello: SQLite 3.x database, application id 0x53454c46, user version 1
-$ ./hello
-Hello, world!
-$ sqlite3 hello 'SELECT soname FROM ldd'          # ldd, as a query
-$ sqlite3 hello 'DELETE FROM sections; VACUUM'    # strip, as a transaction
-$ ./hello                                         # still runs
-Hello, world!
-```
 
 # Developing.
 
