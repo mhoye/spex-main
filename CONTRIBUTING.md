@@ -12,10 +12,11 @@ read, understand, and share with their communities.
 
 That is to say:
 
-- Simplicity is more important than completeness.
-- Legibility is more important than performance.
 - Accessibility is more important than security.
+- Legibility is more important than performance.
+- Simplicity is more important than completeness.
 - Integrity is more important than automation.
+- Community is more important than code.
 
 The most important constituencies of this project are - first - the
 human operators of single computers and - second - the communities
