@@ -159,13 +159,7 @@ $ uv sync                            # to install packages (only needed once)
 $ python -m selfconv -h              # each time you want to run the script
 ```
 
-
-
-
-
-
-
-## What's here
+## Wayfinding - TODO: update/correct this.
 
 - `selfconv/` — the `self` CLI (subcommands include `elf2self`) and `self2elf` (Python + LIEF).
 - `loader/` — `self-exec`, the binfmt interpreter, with three modes:
@@ -184,15 +178,3 @@ $ python -m selfconv -h              # each time you want to run the script
 
 Read [DESIGN.md](./DESIGN.md); §13 tracks implementation status.
 
-## Try it
-
-```console
-$ nix develop                        # dev shell (converter + loader + tools)
-$ nix develop -c bash tests/all.sh   # run M0..M3b end to end
-$ nix develop -c bash tests/showcase.sh
-$ nix run .#self-vm                  # a NixOS VM where ./hello.self just runs
-                                     # (login: root, empty password)
-
-$ bash examples/server/build.sh ./server   # a website, inserted into a program
-$ loader/self-exec ./server 8080           # http://localhost:8080
-```
