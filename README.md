@@ -7,10 +7,10 @@ In late 2026, Faride Zakaria introduced the **SELF** file, the
 to standard ELF files, including the binfmt_misc machinery required to
 run those SELF files on Linux and NixOS. 
 
-SQLite Packaged Executables - SPEX files - take that idea a step
-further, integrating information from package managers, documentation
-and other executable-adjacent resources to create a unified software
-package that is trivial to deploy, explore and audit. 
+SQLite Packaged Executables - SPEX files - is a fork meant to take 
+that idea a step further, integrating information from package managers,
+documentation and other executable-adjacent resources to create a unified
+software package that is trivial to deploy, explore and audit. 
 
 As well - by taking advantage of the capabilities of SQLite - this
 project has two other goals. First, this approach lets us replace a 
