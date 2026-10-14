@@ -1,3 +1,6 @@
+
+## note: this is held over from the upstream fork - mhoye.
+
 # SELF: the Structured Executable & Linkable Format
 
 *An executable format that is a SQLite database — and a plan to boot real
