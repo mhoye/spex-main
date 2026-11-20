@@ -11,7 +11,7 @@ import stat
 import sys
 
 from .elfimage import Ehdr, Phdr, serialize_image
-from .schema import APPLICATION_ID
+from .self_schema import APPLICATION_ID
 
 
 def open_self(path: str) -> sqlite3.Connection:

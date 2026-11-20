@@ -9,7 +9,7 @@ import sys
 
 from .closure import build_closure
 from .elf2self import convert
-from .schema import APPLICATION_ID
+from .self_schema import APPLICATION_ID
 from .self2elf import open_self
 
 RESOLVER_SCHEMA = """

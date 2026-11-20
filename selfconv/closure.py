@@ -16,7 +16,7 @@ import subprocess
 
 from . import elfimage
 from .elfimage import PF_R, PF_W, PF_X
-from .schema import APPLICATION_ID, FORMAT_VERSION
+from .self_schema import APPLICATION_ID, FORMAT_VERSION
 
 CLOSURE_SCHEMA = """
 -- one row per object (executable or shared library) in the closure

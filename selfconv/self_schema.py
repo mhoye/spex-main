@@ -1,7 +1,7 @@
 """Authoritative DDL for the SELF format (v1).
 
 `schema/self.sql` at the repo root is generated from this module:
-    python -m selfconv.schema > schema/self.sql
+    python -m selfconv.self_schema > schema/self.sql
 """
 
 APPLICATION_ID = 0x53454C46  # 'SELF'
@@ -10,7 +10,7 @@ FORMAT_VERSION = 1
 SCHEMA_SQL = f"""\
 -- SELF: the Structured Executable & Linkable Format, v{FORMAT_VERSION}
 -- A program is a SQLite database. This file is generated from
--- selfconv/schema.py -- edit there.
+-- selfconv/self_schema.py -- edit there.
 --
 -- PRAGMA application_id = 0x53454C46 ('SELF'), PRAGMA user_version = {FORMAT_VERSION}.
 -- Identification: binfmt_misc magic 'SELF' at byte offset 68.
