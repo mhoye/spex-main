@@ -4,7 +4,7 @@ The SPEX project welcomes new contributions and contributors under
 the terms of the [Contributor Covenant CoC](CODE_OF_CONDUCT.md)
 and the following terms.
 
-# Principles, Goals and Constituencies
+## Principles, Goals and Constituencies
 
 The primary goal of this project is to create systems that the human
 operators and creators of human-scale computing can more easily
@@ -25,7 +25,7 @@ in computing - governments, corporations, hyperscalers, among others
 - their operational or licensing needs are not the priority of this
 project.
 
-# Contributions
+## Contributions
 
 While this project welcomes contributions and new contributors, any 
 contributions larger than a few lines - in particular any new features
@@ -41,7 +41,7 @@ the world, is the goal. That communities can gather around that
 shared understanding to benefit from it, improve their own situation
 or better the state of the world together, is the goal.
 
-# Constraints
+## Constraints
 
 Because creating code is so much easier than understanding, debugging
 and maintaining that code, particularly over the long term, large
@@ -51,7 +51,7 @@ welcome. Because the priority of this project is the shared human
 understanding of human-scale systems, 'agentic', large-model or otherwise 
 sochastically-generated contributions will be unilaterally rejected.
 
-# Maintenance And Support Terms
+## Maintenance And Support Terms
 
 The code, text and data in this repository are provided as-is under
 the terms of the repository's LICENSE.md file as a gift to the
@@ -68,7 +68,7 @@ use of the software for any reason, particularly with respect to:
 
 I hope you find this repository valuable on those terms.
 
-# Notes
+## Notes
 
 Yes, this document does take inspiration from the [Agile
 Manifesto](https://agilemanifesto.org/) and [Worse Is

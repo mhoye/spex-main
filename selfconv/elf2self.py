@@ -5,7 +5,7 @@ import os
 import sqlite3
 import stat
 
-from . import elfimage, schema
+from . import elfimage, self_schema as schema
 
 
 def _enum_name(value) -> str:
