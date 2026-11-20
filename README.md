@@ -21,7 +21,7 @@ Second - and more importantly - this approach will let creative
 developers easily include other useful tools or expressive works 
 with the software they ship.
 
-# The longer story.
+## The longer story.
 
 In a small part of a much longer set of discussions about coding
 style and techniques, John Carmack of ID fame (among many other
@@ -98,7 +98,7 @@ or Postgres; it's competing with fopen().
 
 So what happens if we ... let SQLite win?
 
-# Background 
+## Background 
 
 Zakaria's earlier work in this space -
 [sqlelf](https://github.com/fzakaria/sqlelf)
@@ -112,7 +112,7 @@ of a nixpkgs/NixOS slice.
 This project has changed foundations from the nix/guix environment
 to Debian Trixie.
 
-# Developing.
+## Developing.
 
 This section assumes you're starting from a generally standard
 installation of Debian Trixie, like the author. "Works On My Machine",
@@ -137,11 +137,9 @@ To work with the Python part of the project, you'll first need to install
 
 
 ```console
-
 $ sudo apt install gcc pkg-config sqlite3 libsqlite3-dev libsqlite3-0 \
        curl pyinstaller sqlite3-tools pandoc python3-pandocfilters
 $ curl -LsSf https://astral.sh/uv/install.sh | sh
-
 ```
 
 Note that the Astral installer does not run as root, and is only
@@ -159,7 +157,7 @@ $ uv sync                            # to install packages (only needed once)
 $ python -m selfconv -h              # each time you want to run the script
 ```
 
-## Wayfinding - TODO: update/correct this.
+### Wayfinding - TODO: update/correct this.
 
 - `selfconv/` — the `self` CLI (subcommands include `elf2self`) and `self2elf` (Python + LIEF).
 - `loader/` — `self-exec`, the binfmt interpreter, with three modes:
@@ -178,3 +176,22 @@ $ python -m selfconv -h              # each time you want to run the script
 
 Read [DESIGN.md](./DESIGN.md); §13 tracks implementation status.
 
+## Walkthrough
+
+From a downloaded `.deb` to a queryable SQLite database:
+
+- Set up your Python working environment (described above).
+- Download a Debian package, for example
+  `curl -O http://deb.debian.org/debian/pool/main/x/xterm/xterm_398-1_amd64.deb`.
+- Convert it:
+  `uv run python -m selfconv.deb2spex xterm_398-1_amd64.deb --out out/` unpacks the `.deb`,
+  converts each ELF under `usr/bin` into a `.spex` file,
+  and writes the package's `control` fields into each database's `package` table.
+- Check the result as shown below.
+
+```console
+$ file out/xterm.spex                # SQLite 3.x database
+$ sqlite3 out/xterm.spex .tables     # segments, symbols, package, ...
+$ sqlite3 out/xterm.spex 'SELECT field, value FROM package;'
+$ sqlite3 out/xterm.spex 'SELECT soname FROM ldd;'
+```

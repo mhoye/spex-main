@@ -1,28 +1,28 @@
 """Preliminary DDL for the SPEX format (v1).
 
 `schema/spex.sql` at the repo root is generated from this module:
-    python -m selfconv.schema > schema/self.sql
+    python -m selfconv.spex_schema > schema/spex.sql
 
 This is a very early modification of the SELF format DDL provided
-by Fareed Zakaria, and will be expanded - hopefully! - as we learn 
+by Fareed Zakaria, and will be expanded - hopefully! - as we learn
 more about what this idea enables.
 
 - mhoye, October 2026
 """
 
-APPLICATION_ID = 0x53504558u # 'SPEX' 
+APPLICATION_ID = 0x53504558 # 'SPEX'
 FORMAT_VERSION = 1
 
 SCHEMA_SQL = f"""\
 -- SPEX: the SQLite Packaged Executable Format, v{FORMAT_VERSION}
 -- A program is a SQLite database. This file is generated from
--- selfconv/spex-schema.py -- edit there.
+-- selfconv/spex_schema.py -- edit there.
 --
 -- PRAGMA application_id = 0x53504558 ('SPEX'), PRAGMA user_version = {FORMAT_VERSION}.
 -- Identification: binfmt_misc magic 'SPEX' at byte offset 68.
 
 -- ── identity / ELF ehdr equivalent ──────────────────────────────
-CREATE TABLE self_meta (
+CREATE TABLE spex_meta (
   key   TEXT PRIMARY KEY,
   value ANY
 ) WITHOUT ROWID;
@@ -104,6 +104,12 @@ CREATE TABLE sections (          -- tooling-level; NOT used by any loader
 );
 CREATE TABLE notes (kind TEXT, name TEXT, content BLOB);
 CREATE TABLE docs  (topic TEXT PRIMARY KEY, body TEXT);
+
+-- ── package metadata (filled in by deb2spex) ────────────────────
+CREATE TABLE package (          -- Debian control fields
+  field TEXT PRIMARY KEY,
+  value TEXT
+);
 
 -- ── the self-describing part: views shipped in every binary ────
 CREATE VIEW exports AS

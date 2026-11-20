@@ -1,20 +1,18 @@
 """elf2spex: convert an ELF object into a SPEX database."""
 
-' Note: This is a _very_ basic modification of Zakaria\'s 
-  elf2self work. I\'m taking this approach so that I can add
-  some tables to SPEX files for various bits of additional
-  information and metadata, and renaming the output format to
-  avoid conflicting with SELF-based installations.
-  
-  - mhoye, 2026
-'
+# Note: this is a very basic modification of Zakaria's elf2self work. I'm
+# taking this approach so that I can add some tables to SPEX files for
+# various bits of additional information and metadata, and renaming the
+# output format to avoid conflicting with SELF-based installations.
+#
+# - mhoye, 2026
 
 import json
 import os
 import sqlite3
 import stat
 
-from . import elfimage, schema
+from . import elfimage, spex_schema as schema
 
 
 def _enum_name(value) -> str:
