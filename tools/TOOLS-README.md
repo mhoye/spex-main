@@ -1,7 +1,13 @@
 # SPEX Tools
 
-This folder is for the various utilities that either build spex files
-or replace utilities around them with sqlite-based analogues. 
+This part of the project is just a holding pen for various utilities that either build spex files or replace utilities around them with sqlite-based analogues. 
+
+# TODO
+
+- project references spex-add-docs and spex-add-lsm which need
+  to be, you know, made.
+
+- really need to find somebody smart enough to port this to ARM
 
 
 ## Setting up Debian-based systems 

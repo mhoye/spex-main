@@ -7,6 +7,18 @@ This is a very early modification of the SELF format DDL provided
 by Fareed Zakaria, and will be expanded - hopefully! - as we learn
 more about what this idea enables.
 
+Additions to this document from Zakaria's original so far include:
+
+- Packaging and dependency info (via Deb2spex)
+  - package
+  - depends
+- Documentation via manpages and tldr 
+  - documentation
+- Security info (lsm information, currently only AppArmor)
+  - security 
+
+
+
 - mhoye, October 2026
 """
 
@@ -115,6 +127,24 @@ CREATE TABLE depends (          -- Debian Depends, one row per dependency
   dependency TEXT NOT NULL,     -- package name, e.g. 'libc6'
   version    TEXT               -- version descriptor, e.g. '>= 2.34'; NULL if none
 );
+
+-- ── supplementary documentation (filled in by spex-add-docs) ────────
+-- TODO: this is monolingual. It's monoglot thinking. We can do better.
+
+CREATE TABLE documentation (          -- markdown docs pulled from different sources
+  manual   TEXT,
+  examples TEXT
+);
+
+-- ── supplementary documentation (filled in by spex-add-lsm) ────────
+
+CREATE TABLE security (          -- documentation pulled from different sources
+  lsmname TEXT PRIMARY KEY,
+  lsmparams TEXT                 -- (not sure if this is text,
+);
+
+
+
 
 -- ── the self-describing part: views shipped in every binary ────
 CREATE VIEW exports AS
