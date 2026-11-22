@@ -1,7 +1,7 @@
 """Preliminary DDL for the SPEX format (v1).
 
 `schema/spex.sql` at the repo root is generated from this module:
-    python -m selfconv.spex_schema > schema/spex.sql
+    python -m spexconv.schema > schema/spex.sql
 
 This is a very early modification of the SELF format DDL provided
 by Fareed Zakaria, and will be expanded - hopefully! - as we learn

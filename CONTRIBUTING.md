@@ -2,7 +2,7 @@
 
 The SPEX project welcomes new contributions and contributors under
 the terms of the [Contributor Covenant CoC](CODE_OF_CONDUCT.md)
-and the following terms.
+and the following terms and principles.
 
 ## Principles, Goals and Constituencies
 
@@ -19,10 +19,10 @@ That is to say:
 - Community is more important than code.
 
 The most important constituencies of this project are - first - the
-human operators of single computers and - second - the communities
+human operators of personal computers and - second - the communities
 they participate in or support. While other constituencies exist
-in computing - governments, corporations, hyperscalers, among others
-- their operational or licensing needs are not the priority of this
+in computing - governments, corporations, hyperscalers, among others -
+their operational or licensing needs are not the priority of this
 project.
 
 ## Contributions
@@ -33,7 +33,7 @@ or significant re-architecting or reorganization of the codebase -
 *must* begin with a discussion in the issue tracker that establishes 
 the goals, scope, constraints and testing required for that change 
 to be accepted.
-
+.
 The software _per se_ is not the goal. Code is the implementation
 language of a shared understanding, and that shared understanding
 of a shared problem, between people with wants and needs living in
@@ -44,12 +44,14 @@ or better the state of the world together, is the goal.
 ## Constraints
 
 Because creating code is so much easier than understanding, debugging
-and maintaining that code, particularly over the long term, large
+and maintaining that code, particularly over the long term, all large
 contributions offered before we've come to some reasonable consensus
 about structure, success conditions and acceptance criteria are not
 welcome. Because the priority of this project is the shared human 
 understanding of human-scale systems, 'agentic', large-model or otherwise 
-sochastically-generated contributions will be unilaterally rejected.
+sochastically-generated contributions will be unilaterally rejected
+without review or discussion, as will efforts to relitigate this
+position. This is not negotiable.
 
 ## Maintenance And Support Terms
 
@@ -72,7 +74,7 @@ I hope you find this repository valuable on those terms.
 
 Yes, this document does take inspiration from the [Agile
 Manifesto](https://agilemanifesto.org/) and [Worse Is
-Better](https://en.wikipedia.org/wiki/Worse_is_better)
+Better](https://en.wikipedia.org/wiki/Worse_is_better).
 
 The original text of this file comes from the [Maintenance
 Terms](https://github.com/mhoye/maintenance-terms) repository.
